@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>prefinal exam</title>
+</head>
+<body>
+    <h1>Prefinal Examination</h1>
+    <input type="number" id="numInput" placeholder="Enter a Number">
+    <button onclick="checkNumberProperties()">Submit</button>
+    <div id="result"></div>
+
+    <script>
+        function checkNumberProperties() {
+            var num = document.getElementById('numInput').value;
+            var odds = [1];
+            var evens = [];
+
+            for (var n = 2; n <= num; n++) {
+                if (n % 2 === 0) {
+                    evens.push(n);
+                } else {
+                    odds.push(n);
+                }
+            }
+            var result = '<h2></h2>';
+            result += '<p>Number: ' + num + '</p>';
+            result += '<p>Odd numbers: ' + odds.join(', ') + '</p>';
+            result += '<p>Even numbers: ' + evens.join(', ') + '</p>';
+            document.getElementById('result').innerHTML = result;
+        }
+    </script>
+</body>
+</html>
